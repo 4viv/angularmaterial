@@ -1,0 +1,12 @@
+.espacio {
+  margin-right: 30px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.msError {
+  margin-top: 20px;
+  color: #f44336;
+}

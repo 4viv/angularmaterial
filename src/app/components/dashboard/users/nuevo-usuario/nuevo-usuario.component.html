@@ -1,0 +1,111 @@
+<p>
+  <mat-toolbar>
+    <span style="margin-left: 20px">{{ accion }} usuario</span>
+  </mat-toolbar>
+</p>
+
+<div class="container">
+  <mat-card>
+    <form [formGroup]="form" (ngSubmit)="crearUsuario()">
+      <mat-grid-list cols="4" rowHeight="70px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field>
+            <mat-label>Nombre completo</mat-label>
+            <input
+              class="ancho"
+              matInput
+              autocomplete="off"
+              formControlName="nombreCompleto"
+            />
+            <!-- <div *ngIf="form.get('nombreCompleto').hasError('required') && form.get('nombreCompleto').touched" class="msError">
+              <span>El <strong>nombre</strong> es requerido</span>
+            </div> -->
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="6">
+          <img
+            src="./assets/img/crear-usuario.jpg"
+            alt=""
+            width="300"
+            height="300"
+          />
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1"
+          ><mat-form-field>
+            <mat-label>Telefono</mat-label>
+            <input
+              type="number"
+              class="ancho"
+              matInput
+              autocomplete="off"
+              formControlName="telefono"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field>
+            <mat-label>Correo</mat-label>
+            <input
+              type="email"
+              class="ancho"
+              matInput
+              autocomplete="off"
+              formControlName="correo"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="example-full-width">
+            <mat-label>Fecha de ingreso</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              autocomplete="off"
+              formControlName="fechaIngreso"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field>
+            <mat-label>Estado civil</mat-label>
+            <mat-select formControlName="estadoCivil">
+              <mat-option *ngFor="let item of estadoCivil" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-radio-group aria-label="Sexo" formControlName="sexo">
+            <mat-radio-button value="Masculino">Masculino</mat-radio-button>
+            <mat-radio-button value="Femenino">Femenino</mat-radio-button>
+          </mat-radio-group>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <button
+            routerLink="/dashboard/usuarios"
+            mat-raised-button
+            class="espacio"
+          >
+            Volver
+          </button>
+          <button
+            type="submit"
+            [disabled]="form.invalid"
+            mat-raised-button
+            color="primary"
+          >
+            Agregar
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+</div>

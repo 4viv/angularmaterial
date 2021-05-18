@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  margin: 40px;
+}
+
+.filtro {
+  margin-left: 10px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.search {
+  color: #1878b0;
+}
+
+.edit {
+  color: #1f516f;
+}
+
+.delete {
+  color: #e15639;
+}
+
+a {
+  margin-right: 10px;
+}
+
+.mensaje {
+  text-align: center;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
